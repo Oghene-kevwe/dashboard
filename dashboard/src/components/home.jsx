@@ -1,12 +1,13 @@
 import { Sidebar } from "./sidebar";
-import { tabs } from "../utils/data";
 import { tabDetails } from "../utils/data";
 import { chartData } from "../utils/data";
 import { tableData } from "../utils/data";
+import { Popup } from "./popup";
 
 import { Line } from "react-chartjs-2";
 import { CategoryScale } from "chart.js";
 import { Chart } from "chart.js/auto";
+import { useState } from "react";
 
 Chart.register(CategoryScale);
 
@@ -81,6 +82,12 @@ export function Home({ showMenu }) {
     },
   };
 
+  const [tooltip, setToolTip] = useState(false);
+
+  function toggleTooltip() {
+    setToolTip(!tooltip);
+  }
+
   return (
     <main className="relative  text-[#1D242D] bg-[#f4f5f6] lg:flex">
       {showMenu && <Sidebar />}
@@ -99,19 +106,27 @@ export function Home({ showMenu }) {
               </button>
             </div>
           </div>
+
           {/* tabs */}
           <article className=" mb-8 bg-white flex justify-between  items-center flex-wrap gap-4 rounded-md px-2 w-fit ">
-            {tabs.map(({ info, id, bgColor, textcolor }) => {
-              return (
-                <button
-                  key={id}
-                  className={"p-1 px-3 h-full " + (id === 1 ? "tabText" : " ")}
-                >
-                  {info}
-                </button>
-              );
-            })}
+            <button className="p-1 px-3 h-full ">Transactions</button>
+            {/* selected tab */}
+            <div
+              className=" relative"
+              onMouseEnter={toggleTooltip}
+              onMouseLeave={toggleTooltip}
+            >
+              <button className=" p-1 px-3 h-full settlementText ">
+                Settlements
+              </button>
+              {/* tooltip */}
+              {tooltip && <Popup />}
+            </div>
+            <button className="p-1 px-3 h-full ">Performance</button>
+            <button className="p-1 px-3 h-full ">Terminal Health</button>
+            <button className="p-1 px-3 h-full ">Bank Statement</button>
           </article>
+
           {/* tabs info */}
           <article className=" w-fit flex  flex-wrap    gap-4">
             {tabDetails.map(({ id, info, image, amount }) => {
@@ -133,6 +148,7 @@ export function Home({ showMenu }) {
             })}
           </article>
         </section>
+
         {/* chart */}
         <section className=" bg-white  rounded-md mb-16 ">
           <div className="relative h-[55vh] ">
@@ -148,6 +164,7 @@ export function Home({ showMenu }) {
             </button>
           </div>
         </section>
+
         {/* table */}
         <section className="remove-scrollbar overflow-x-auto  ">
           <table className=" min-w-[30rem] w-full bg-[#EDF1FF] mb-20 ">
