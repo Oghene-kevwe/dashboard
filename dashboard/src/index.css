@@ -13,7 +13,7 @@ img{
   height: 100%;
 }
 
-.tabText{
+.settlementText{
   background: #4C6FFF;
   color: #ffffff;
   border-radius: 5px;
@@ -30,5 +30,12 @@ td{
 
 tbody:nth-child(even) {background-color: white;}
 
+.popup-triangle{
+  width: 0;
+	height: 0;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	border-top: 40px solid #FCFDFD;
+}
 
 

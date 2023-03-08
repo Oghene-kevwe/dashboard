@@ -1,7 +1,7 @@
 export function NavBar ({setShowMenu,showMenu}) {
 
   return (
-    <nav className=" bg-white pt-4 px-[3vw] pb-8 lg:flex gap-x-12 items-center  relative ">
+    <nav className=" bg-white pt-6 px-[3vw] pb-8 lg:flex gap-x-12 items-center  relative ">
       <div className=" flex justify-between mb-8 lg:mb-0 ">
         {/* menu button */}
         <div className=" flex gap-x-4">
