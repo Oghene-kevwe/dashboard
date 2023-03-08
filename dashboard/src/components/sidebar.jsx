@@ -7,7 +7,6 @@ export function Sidebar() {
       {/* content */}
       <div className=" text-[#909DAD] grid gap-6">
         {sidebarData.map(({ id, value, dropdown, icon }) => {
-
           const dropdownElement = [1, 2, 3, 4, 8];
           return (
             <div key={id} className=" flex items-center gap-3 ">
@@ -15,16 +14,11 @@ export function Sidebar() {
                 <img src={`images/icons/${icon}`} alt={value} />
               </div>
               <p className={id === 0 ? "text-[#4C6FFF]" : " "}>{value}</p>
-              <button className=" w-4 h-4">
-                <img
-                  src={
-                    dropdownElement.includes(id)
-                      ? `images/icons/${dropdown}`
-                      : null
-                  }
-                  alt={dropdownElement.includes(id) ? "dropdown" : " "}
-                />
-              </button>
+              {dropdownElement.includes(id) && (
+                <button className=" w-4 h-4">
+                  <img src={`images/icons/${dropdown}`} alt="dropdown" />
+                </button>
+              )}
             </div>
           );
         })}
