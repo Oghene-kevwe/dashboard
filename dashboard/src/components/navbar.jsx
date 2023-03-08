@@ -15,7 +15,7 @@ export function NavBar ({setShowMenu,showMenu}) {
         </div>
 
         <div className=" flex gap-4 lg:absolute right-[4vw]">
-        {/* notofication  */}
+        {/* notofication icon  */}
           <button className=" w-6 h-6">
             <img src="images/icons/notification.svg" alt="notification icon" />
           </button>

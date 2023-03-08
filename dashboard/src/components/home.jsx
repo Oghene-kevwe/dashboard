@@ -3,7 +3,6 @@ import { tabDetails } from "../utils/data";
 import { chartData } from "../utils/data";
 import { tableData } from "../utils/data";
 import { Popup } from "./popup";
-
 import { Line } from "react-chartjs-2";
 import { CategoryScale } from "chart.js";
 import { Chart } from "chart.js/auto";
@@ -82,8 +81,8 @@ export function Home({ showMenu }) {
     },
   };
 
+// display tooltip
   const [tooltip, setToolTip] = useState(false);
-
   function toggleTooltip() {
     setToolTip(!tooltip);
   }

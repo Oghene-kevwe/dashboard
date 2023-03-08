@@ -13,12 +13,14 @@ img{
   height: 100%;
 }
 
+/* selected tab */
 .settlementText{
   background: #4C6FFF;
   color: #ffffff;
   border-radius: 5px;
 }
 
+/* table */
 th,td{
   padding: .5rem;
 }
@@ -27,9 +29,9 @@ td{
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 }
-
 tbody:nth-child(even) {background-color: white;}
 
+/* popup */
 .popup-triangle{
   width: 0;
 	height: 0;
