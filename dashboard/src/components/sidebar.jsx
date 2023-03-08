@@ -20,7 +20,7 @@ export function Sidebar() {
                   src={
                     dropdownElement.includes(id)
                       ? `images/icons/${dropdown}`
-                      : " "
+                      : null
                   }
                   alt={dropdownElement.includes(id) ? "dropdown" : " "}
                 />
