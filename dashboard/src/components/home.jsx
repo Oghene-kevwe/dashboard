@@ -149,8 +149,8 @@ export function Home({ showMenu }) {
           </div>
         </section>
         {/* table */}
-        <section className="remove-scrollbar overflow-x-auto mb-20 ">
-          <table className=" min-w-[30rem] w-full bg-[#EDF1FF] ">
+        <section className="remove-scrollbar overflow-x-auto  ">
+          <table className=" min-w-[30rem] w-full bg-[#EDF1FF] mb-20 ">
             <tbody>
               <tr className=" bg-[#C8D2FF] font-semibold">
                 <th>Time</th>
